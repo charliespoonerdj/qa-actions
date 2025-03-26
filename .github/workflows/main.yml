@@ -28,7 +28,7 @@ jobs:
         run: echo "Build and Test complete"
 
       - name: Archive JAR files
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: jar-files
           path: target/*.jar
