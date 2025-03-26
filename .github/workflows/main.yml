@@ -24,5 +24,11 @@ jobs:
       - name: Maven Build
         run: mvn clean install
 
-      - name: Hello World
-        run: echo "Hello, World!"
+      - name: Build Test
+        run: echo "Build and Test complete"
+
+      - name: Archive JAR files
+        uses: actions/upload-artifact@v3
+        with:
+          name: jar-files
+          path: target/*.jar
