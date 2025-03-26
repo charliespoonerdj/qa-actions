@@ -1,0 +1,13 @@
+name: Actions Tets
+
+on: [push]
+
+jobs:
+  hello_world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Hello World
+        run: echo "Hello, World!"
