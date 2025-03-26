@@ -1,6 +1,12 @@
 name: Actions Tets
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   hello_world:
@@ -8,6 +14,15 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+      - name: Intall JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '23'
+
+      - name: Maven Build
+        run: mvn clean install
 
       - name: Hello World
         run: echo "Hello, World!"

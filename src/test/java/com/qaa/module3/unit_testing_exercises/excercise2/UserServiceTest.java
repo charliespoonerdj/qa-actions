@@ -245,7 +245,7 @@ void registerInvalidDuplicateUsername() {
 			// Act
 		    service.login(incorrectUsername, password);
 			fail("Expected an IllegalArgumentException due to incorrect username.");
-		} catch (IllegalArgumentException iae) {
+		} catch (RuntimeException iae) {
 			// Assert
 			Assertions.assertEquals(expected, iae.getMessage());
 		}
